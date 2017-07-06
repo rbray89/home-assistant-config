@@ -1,0 +1,9 @@
+climate.thermostat_cooling_1:
+  friendly_name: Cooling
+climate.thermostat_heating_1:
+  friendly_name: Heating
+  
+sensor.thermostat_temperature:
+  friendly_name: Thermostat
+sensor.motion_sensor_temperature:
+  friendly_name: Living Room

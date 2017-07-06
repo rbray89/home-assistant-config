@@ -1,0 +1,17 @@
+automation_view:
+  name: Automation
+  view: true
+  entities:
+    - group.automations
+
+automations:
+  name: Automations
+  control: hidden
+  entities:
+    - automation.door_open_light
+    - automation.update_available_notifications
+    - automation.wakeup_light_trigger
+    - automation.enable_notifications_when_away
+    - automation.disable_notifications_when_home
+    - automation.nas_disk_status_notifications_a
+    - automation.nas_disk_status_notifications_b

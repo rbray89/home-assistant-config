@@ -1,0 +1,57 @@
+
+switch.siren_switch:
+  friendly_name: Siren Alarm
+  icon: mdi:alarm-bell
+  emulated_hue: false
+  
+input_boolean.security_armed:
+  emulated_hue: false
+
+input_boolean.security_notifications:
+  emulated_hue: false
+  
+binary_sensor.trig_motion_sensor:
+  friendly_name: 'Motion Sensor'
+  device_class: motion
+binary_sensor.trig_front_door_sensor:
+  friendly_name: 'Front Door Sensor'
+  device_class: opening
+binary_sensor.trig_guest_window_sensor:
+  friendly_name: 'Guest Window Sensor'
+  device_class: opening
+binary_sensor.trig_master_window_sensor:
+  friendly_name: 'Master Window Sensor'
+  device_class: opening
+binary_sensor.trig_patio_door_sensor:
+  friendly_name: 'Patio Door Sensor'
+  device_class: opening
+binary_sensor.trig_fire_alarm:
+  friendly_name: 'Fire Alarm'
+  device_class: smoke
+
+
+automation.lights_alarm:
+  friendly_name: 'Lights Alarm'
+  icon: mdi:alarm-light
+automation.siren_alarm:
+  friendly_name: 'Siren Alarm'
+  icon: mdi:alarm-bell
+  
+automation.motion_notifications:
+  friendly_name: 'Living Room Motion Notification'
+  icon: mdi:comment-alert
+automation.front_door_notifications:
+  friendly_name: 'Front Door Notification'
+  icon: mdi:comment-alert
+automation.guest_window_notifications:
+  friendly_name: 'Guest Bedroom Window Notification'
+  icon: mdi:comment-alert
+automation.master_window_notifications:
+  friendly_name: 'Master Bedroom Window Notification'
+  icon: mdi:comment-alert
+automation.patio_door_notifications:
+  friendly_name: 'Patio Door Notification'
+  icon: mdi:comment-alert
+automation.fire_alarm_notifications:
+  friendly_name: 'Fire Alarm Notification'
+  icon: mdi:comment-alert

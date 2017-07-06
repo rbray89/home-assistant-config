@@ -1,0 +1,23 @@
+- alias: 'Nas disk status notifications A'
+  trigger:
+    platform: state
+    entity_id: sensor.status_smart_sda
+    from: 'normal'
+  action:
+  - service: persistent_notification.create
+    data:
+      title:   '{{as_timestamp(now())|timestamp_custom("%m/%d/%y %I:%M %p", true)}}'
+      message: 'NAS disk A reporting not normal.'
+      notification_id: 2
+
+- alias: 'Nas disk status notifications B'
+  trigger:
+    platform: state
+    entity_id: sensor.status_smart_sdb
+    from: 'normal'
+  action:
+  - service: persistent_notification.create
+    data:
+      title:   '{{as_timestamp(now())|timestamp_custom("%m/%d/%y %I:%M %p", true)}}'
+      message: 'NAS disk B reporting not normal.'
+      notification_id: 3

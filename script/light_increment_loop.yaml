@@ -1,0 +1,13 @@
+light_increment_loop:
+  alias: Light Increment Loop
+  sequence:
+  - service: script.turn_off
+    entity_id: script.light_increment
+  - delay: '0:0:01'
+  - service: script.light_increment
+    data_template:
+      light_id: '{{light_id}}'
+      inc: '{{inc}}'
+      delay: '{{delay}}'
+      target: '{{target}}'
+      set: '{{set|int+inc|int}}'

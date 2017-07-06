@@ -1,0 +1,26 @@
+- platform: template
+  sensors:
+    batt_front_door_lock:
+      value_template: '{% set d=states.zwave.front_door_lock %}{{ d.attributes.battery_level if d != None else "~" }}'
+      unit_of_measurement: '%'
+    batt_siren:
+      value_template: '{% set d=states.zwave.siren %}{{ d.attributes.battery_level if d != None else "~" }}'
+      unit_of_measurement: '%'
+    batt_motion_sensor:
+      value_template: '{% set d=states.zwave.motion_sensor %}{{ d.attributes.battery_level if d != None else "~" }}'
+      unit_of_measurement: '%'
+    batt_front_door_sensor:
+      value_template: '{% set d=states.zwave.front_door_sensor %}{{ d.attributes.battery_level if d != None else "~" }}'
+      unit_of_measurement: '%'
+    batt_guest_window_sensor:
+      value_template: '{% set d=states.zwave.guest_bedroom_window_sensor %}{{ d.attributes.battery_level if d != None else "~" }}'
+      unit_of_measurement: '%'
+    batt_master_window_sensor:
+      value_template: '{% set d=states.zwave.master_bedroom_window_sensor %}{{ d.attributes.battery_level if d != None else "~" }}'
+      unit_of_measurement: '%'
+    batt_patio_door_sensor:
+      value_template: '{% set d=states.zwave.patio_door_sensor %}{{ d.attributes.battery_level if d != None else "~" }}'
+      unit_of_measurement: '%'
+    batt_fire_alarm_sensor:
+      value_template: '{% set d=states.zwave.fire_alarm_sensor %}{{ d.attributes.battery_level if d != None else "~" }}'
+      unit_of_measurement: '%'

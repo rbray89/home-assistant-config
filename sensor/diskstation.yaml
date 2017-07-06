@@ -1,0 +1,13 @@
+- platform: synologydsm
+  host: !secret diskstation_ip
+  username: !secret diskstation_user
+  password: !secret diskstation_pass
+  monitored_conditions:
+    - cpu_total_load
+    - memory_real_usage
+    - network_up
+    - disk_name
+    - disk_smart_status
+    - disk_status
+    - volume_status
+    - volume_percentage_used

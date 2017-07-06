@@ -1,0 +1,41 @@
+- platform: template
+  sensors:
+    trig_motion_sensor:
+      value_template: '{% set d=states.sensor.motion_sensor_alarm_level %}{{ False if d == None else d.state | int > 0 }}'
+      entity_id: sensor.motion_sensor_alarm_level
+      
+    trig_front_door_sensor:
+      value_template: '{% set d=states.sensor.front_door_sensor_alarm_level %}{{ False if d == None else d.state | int > 0 }}'
+      entity_id: sensor.front_door_sensor_alarm_level
+      
+    trig_guest_window_sensor:
+      value_template: '{% set d=states.sensor.guest_bedroom_window_sensor_alarm_level %}{{ False if d == None else d.state | int > 0 }}'
+      entity_id: sensor.guest_bedroom_window_sensor_alarm_level
+      
+    trig_master_window_sensor:
+      value_template: '{% set d=states.sensor.master_bedroom_window_sensor_alarm_level %}{{ False if d == None else d.state | int > 0 }}'
+      entity_id: sensor.master_bedroom_window_sensor_alarm_level
+      
+    trig_patio_door_sensor:
+      value_template: '{% set d=states.sensor.patio_door_sensor_alarm_level %}{{ False if d == None else d.state | int > 0 }}'
+      entity_id: sensor.patio_door_sensor_alarm_level
+      
+    trig_fire_alarm:
+      value_template: '{% set d=states.sensor.fire_alarm_sensor_alarm_level %}{{ False if d == None else d.state | int > 0 }}'
+      entity_id: sensor.fire_alarm_sensor_alarm_level
+      
+    trig_entry_sensor:
+      value_template: '{{True if states.binary_sensor.trig_patio_door_sensor.state == "on" or states.binary_sensor.trig_master_window_sensor.state == "on" or states.binary_sensor.trig_guest_window_sensor.state == "on" or states.binary_sensor.trig_front_door_sensor.state == "on" else False}}'
+      entity_id: 
+        - binary_sensor.trig_front_door_sensor
+        - binary_sensor.trig_guest_window_sensor
+        - binary_sensor.trig_master_window_sensor
+        - binary_sensor.trig_patio_door_sensor
+        
+    trig_security_sensor:
+      value_template: '{{True if states.binary_sensor.trig_entry_sensor.state == "on" or states.binary_sensor.trig_fire_alarm.state == "on" or states.binary_sensor.trig_motion_sensor.state == "on" else False}}'
+      entity_id: 
+        - binary_sensor.trig_entry_sensor
+        - binary_sensor.trig_fire_alarm
+        - binary_sensor.trig_master_sensor
+        - binary_sensor.trig_motion_sensor

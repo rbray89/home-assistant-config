@@ -1,0 +1,106 @@
+group.default_view:
+  order: 1
+  emulated_hue: false
+  
+group.lights_view:
+  order: 4
+  emulated_hue: false
+
+group.appliances_view:
+  order: 5
+  emulated_hue: false
+  
+group.security_view:
+  order: 6
+  emulated_hue: false
+
+group.automation_view:
+  order: 7
+  emulated_hue: false
+  
+group.status_view:
+  order: 8
+  emulated_hue: false
+
+  
+group.weather:
+  emulated_hue: false
+  
+group.thermostat:
+  emulated_hue: false
+
+
+
+group.living_room:
+  emulated_hue_name: "All Living Room Lights"
+  
+group.master_bedroom:
+  emulated_hue_name: "All Master Bedroom Lights"  
+
+group.master_bath:
+  emulated_hue_name: "All Master Bath Lights"  
+  
+group.main_bath:
+  emulated_hue_name: "All Main Bath Lights"  
+    
+group.guest_bedroom:
+  emulated_hue_name: "All Guest Bedroom Lights"  
+  
+group.patio:
+  emulated_hue_name: "All Patio Lights" 
+
+
+  
+
+  
+group.security_status:
+  emulated_hue: false
+  
+group.security_group:
+  emulated_hue: false
+  
+group.security_config:
+  emulated_hue: false
+  
+
+group.diskstation:
+  emulated_hue: false
+  
+group.batteries:
+  emulated_hue: false
+  
+group.system:
+  emulated_hue: false
+
+
+group.automations:
+  emulated_hue: false
+  
+group.all_automations:
+  emulated_hue: false
+  
+group.all_locks:
+  emulated_hue: false
+  
+group.all_switches:
+  emulated_hue: false
+  
+group.all_scripts:
+  emulated_hue: false
+  
+group.all_devices:
+  emulated_hue: false
+
+group.all_lights:
+  emulated_hue_name: "All Lights"
+  
+group.all_lights_2:
+  emulated_hue: false
+  
+
+group.switchable_appliances:
+  emulated_hue_name: "All Appliances"
+
+group.shabbos_appliances:
+  emulated_hue_name: "Shabbos Appliances"
+  

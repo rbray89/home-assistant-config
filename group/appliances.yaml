@@ -1,0 +1,20 @@
+appliances_view:
+  name: Appliances
+  view: yes
+  entities:
+    - group.thermostat
+    - group.switchable_appliances
+    
+
+switchable_appliances:
+  name: Switchable Appliances
+  entities:
+    - switch.main_bathroom_toilet_switch_3
+    - switch.master_bathroom_toilet_switch_3
+
+shabbos_appliances:
+  name: Shabbos Appliances
+  entities:
+    - switch.main_bathroom_toilet_switch_3
+    - switch.master_bathroom_toilet_switch_3
+    

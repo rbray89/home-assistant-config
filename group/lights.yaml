@@ -1,0 +1,82 @@
+lights_view:
+  name: Lights
+  view: true
+  entities:
+    - group.patio
+    - group.guest_bedroom
+    - group.master_bedroom
+    - group.living_room
+    - group.k_and_d
+    - group.master_bath
+    - group.main_bath
+
+living_room:
+  name: Living Room
+  entities:
+    - light.living_room_light_level
+    - light.living_room_floor_lamp_level
+    - light.living_room_table_lamp_level
+
+k_and_d:
+  name: Kitchen And Dining
+  entities:
+    - light.kitchen_light_level
+    - light.dining_light_level
+    - light.hallway_light_level
+    
+patio:
+  name: Patio
+  entities:
+    - switch.patio_string_lights_switch
+    - light.patio_light_level
+
+guest_bedroom:
+  name: Guest Bedroom
+  entities:
+    - light.guest_bedroom_light_level
+    - light.guest_bedroom_lamp_level
+
+main_bath:
+  name: Main Bathroom
+  entities:
+    - light.main_bathroom_vanity_level
+    - light.main_bathroom_tub_level
+    
+
+
+master_bedroom:
+  name: Master Bedroom
+  entities:
+    - light.master_bedroom_light_level
+    - light.master_bedroom_left_lamp_level
+    - light.master_bedroom_right_lamp_level
+
+master_bath:
+  name: Master Bath
+  entities:
+    - light.master_bathroom_vanity_level
+    - light.master_bathroom_shower_level
+    - light.master_bedroom_closet_level
+
+    
+all_lights:
+  name: All Lights
+  entities:
+    - light.living_room_light_level
+    - light.living_room_floor_lamp_level
+    - light.living_room_table_lamp_level
+    - light.kitchen_light_level
+    - light.dining_light_level
+    - light.hallway_light_level
+    - switch.patio_string_lights_switch
+    - light.patio_light_level
+    - light.guest_bedroom_light_level
+    - light.guest_bedroom_lamp_level
+    - light.main_bathroom_vanity_level
+    - light.main_bathroom_tub_level
+    - light.master_bedroom_light_level
+    - light.master_bedroom_left_lamp_level
+    - light.master_bedroom_right_lamp_level
+    - light.master_bathroom_vanity_level
+    - light.master_bathroom_shower_level
+    - light.master_bedroom_closet_level

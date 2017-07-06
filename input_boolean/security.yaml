@@ -1,0 +1,14 @@
+security_notifications:
+  name: Security Notifications
+  icon: mdi:comment-alert
+  initial: on
+  
+security_armed:
+  name: Security System Armed
+  icon: mdi:security
+  initial: on
+
+lights_alarm:
+  name: Lights Alarm
+  icon: mdi:security
+  initial: off

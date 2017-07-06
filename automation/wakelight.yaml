@@ -1,0 +1,12 @@
+- alias: Wake-up Light Trigger
+  trigger:
+    platform: time
+    at: '7:00:00'
+  action:
+    service: script.light_increment
+    data:
+      light_id: light.living_room_floor_lamp_level
+      inc: 4
+      delay: 0:0:04
+      target: 255
+      set: 4

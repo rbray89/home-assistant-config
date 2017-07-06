@@ -1,0 +1,3 @@
+lock.front_door_lock_locked:
+  friendly_name: Front Door
+  emulated_hue: false

@@ -1,0 +1,44 @@
+status_view:
+  name: Status
+  view: true
+  entities:
+    - group.system
+    - group.batteries
+    - group.diskstation
+
+batteries:
+  name: Battery Levels
+  entities:
+    - sensor.batt_front_door_lock
+    - sensor.batt_siren
+    - sensor.batt_motion_sensor
+    - sensor.batt_front_door_sensor
+    - sensor.batt_guest_window_sensor
+    - sensor.batt_master_window_sensor
+    - sensor.batt_patio_door_sensor
+    - sensor.batt_fire_alarm_sensor
+
+system:
+  name: System Status
+  entities:
+    - sensor.cpu_use
+    - sensor.ram_use
+    - sensor.ram_free
+    - sensor.disk_use_
+    - sensor.disk_free_
+    - sensor.since_last_boot
+    
+diskstation:
+  name: Diskstation
+  entities:
+    - sensor.cpu_load_total
+    - sensor.memory_usage_real
+    - sensor.network_up
+    - sensor.status_volume_1
+    - sensor.volume_used_volume_1
+    - sensor.name_sda
+    - sensor.status_sda
+    - sensor.status_smart_sda
+    - sensor.name_sdb
+    - sensor.status_sdb
+    - sensor.status_smart_sdb

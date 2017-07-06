@@ -1,0 +1,18 @@
+      
+- alias: 'Door Open Light'
+  trigger:
+    platform: state
+    entity_id: sensor.front_door_lock_alarm_type
+    to: '19'
+  action:
+    service: light.turn_on
+    data:
+      entity_id: light.living_room_floor_lamp_level
+      brightness: 255
+
+#18 - Lock Button
+#21 - Manual Lock
+#24 - Software Lock
+#19 - Code Unlock
+#22 - Manual Unlock
+#25 - Software Unlock

@@ -1,0 +1,18 @@
+sensor.dark_sky_temperature:
+  friendly_name: Temperature
+sensor.dark_sky_cloud_coverage:
+  friendly_name: Cloud Coverage
+sensor.dark_sky_humidity:
+  friendly_name: Humidity
+sensor.dark_sky_precip_probability:
+  friendly_name: Precipitation Probability
+sensor.dark_sky_precip:
+  friendly_name: Precipitation
+sensor.dark_sky_precip_intensity:
+  friendly_name: Precipitation Intensity
+sensor.dark_sky_pressure:
+  friendly_name: Pressure
+sensor.dark_sky_wind_bearing:
+  friendly_name: Wind Bearing
+sensor.dark_sky_wind_speed:
+  friendly_name: Wind Speed

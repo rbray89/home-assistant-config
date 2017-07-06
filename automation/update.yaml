@@ -1,0 +1,16 @@
+- alias: 'Update Available Notifications'
+  trigger:
+    platform: state
+    entity_id: updater.updater
+  action:
+  - service: notify.notify_html5
+    data:
+      title:   '{{as_timestamp(now())|timestamp_custom("%m/%d/%y %I:%M %p", true)}}'
+      message: 'Update for Home Assistant is available.'
+      data:
+        tag: 'update-notification'
+  - service: persistent_notification.create
+    data:
+      title:   '{{as_timestamp(now())|timestamp_custom("%m/%d/%y %I:%M %p", true)}}'
+      message: 'Update for Home Assistant is available.'
+      notification_id: 1

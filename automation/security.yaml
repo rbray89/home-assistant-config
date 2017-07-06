@@ -1,0 +1,145 @@
+- alias: Disable Notifications When Home
+  trigger:
+    platform: state
+    entity_id: device_tracker.owntracks_ryan_cell
+    to: 'home'
+  action:
+    service: input_boolean.turn_off
+    data:
+        entity_id: input_boolean.security_notifications
+
+- alias: Enable Notifications When Away
+  trigger:
+    platform: state
+    entity_id: device_tracker.owntracks_ryan_cell
+    from: 'home'
+  action:
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.security_notifications
+    - service: notify.notify_html5
+      data:
+        title:   '{{as_timestamp(now())|timestamp_custom("%m/%d/%y %I:%M %p", true)}}'
+        message: 'Notifications have been enabled.'
+        data:
+          tag: 'enable-notification'
+
+- alias: Motion Notifications
+  trigger:
+    platform: state
+    entity_id: binary_sensor.trig_motion_sensor
+    to: 'on'
+  condition:
+    condition: state
+    entity_id: input_boolean.security_notifications
+    state: 'on'
+  action:
+    service: notify.notify_html5
+    data:
+      title:   '{{as_timestamp(now())|timestamp_custom("%m/%d/%y %I:%M %p", true)}}'
+      message: 'The living room PIR has detected motion'
+      data:
+        tag: 'motion-notification'
+
+- alias: Front Door Notifications
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.trig_front_door_sensor
+    - platform: state
+      entity_id: lock.front_door_lock_locked
+  condition:
+    condition: state
+    entity_id: input_boolean.security_notifications
+    state: 'on'
+  action:
+    service: notify.notify_html5
+    data:
+      title:   '{{as_timestamp(now())|timestamp_custom("%m/%d/%y %I:%M %p", true)}}'
+      message: 'The front door is {{states.lock.front_door_lock_locked.state}} and {{"open" if states.binary_sensor.trig_front_door_sensor.state=="on" else "closed"}}.'
+      data:
+        tag: 'entry-notification'
+
+- alias: Patio Door Notifications
+  trigger:
+    platform: state
+    entity_id: binary_sensor.trig_patio_sensor
+  condition:
+    condition: state
+    entity_id: input_boolean.security_notifications
+    state: 'on'
+  action:
+    service: notify.notify_html5
+    data:
+      title:   '{{as_timestamp(now())|timestamp_custom("%m/%d/%y %I:%M %p", true)}}'
+      message: 'The patio door was {{"opened" if states.binary_sensor.trig_patio_sensor.state=="on" else "closed"}}.'
+      data:
+        tag: 'entry-notification'
+
+- alias: Guest Window Notifications
+  trigger:
+    platform: state
+    entity_id: binary_sensor.trig_guest_sensor
+  condition:
+    condition: state
+    entity_id: input_boolean.security_notifications
+    state: 'on'
+  action:
+    service: notify.notify_html5
+    data:
+      title:   '{{as_timestamp(now())|timestamp_custom("%m/%d/%y %I:%M %p", true)}}'
+      message: 'The guest bedroom window was {{"opened" if states.binary_sensor.trig_guest_sensor.state=="on" else "closed"}}.'
+      data:
+        tag: 'window-notification'
+
+- alias: Master Window Notifications
+  trigger:
+    platform: state
+    entity_id: binary_sensor.trig_master_sensor
+  condition:
+    condition: state
+    entity_id: input_boolean.security_notifications
+    state: 'on'
+  action:
+    service: notify.notify_html5
+    data:
+      title:   '{{as_timestamp(now())|timestamp_custom("%m/%d/%y %I:%M %p", true)}}'
+      message: 'The master bedroom window was {{"opened" if states.binary_sensor.trig_master_sensor.state=="on" else "closed"}}.'
+      data:
+        tag: 'window-notification'
+
+- alias: Fire Alarm  Notifications
+  trigger:
+    platform: state
+    entity_id: binary_sensor.trig_fire_alarm
+  condition:
+    condition: state
+    entity_id: input_boolean.security_notifications
+    state: 'on'
+  action:
+    service: notify.notify_html5
+    data:
+      title:   '{{as_timestamp(now())|timestamp_custom("%m/%d/%y %I:%M %p", true)}}'
+      message: 'The fire alarm was {{"triggered" if states.binary_sensor.trig_fire_alarm.state=="on" else "disabled"}}.'
+      data:
+        tag: 'fire-notification'
+
+- alias: Siren Alarm
+  trigger:
+    platform: state
+    entity_id: binary_sensor.trig_security_sensor
+    to: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: switch.siren_switch
+
+- alias: Lights Alarm
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.trig_security_sensor
+      to: 'on'
+    - platform: state
+      entity_id: input_boolean.lights_alarm
+      to: 'on'
+  action:
+    service: homeassistant.turn_on
+    entity_id: group.all_lights

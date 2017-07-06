@@ -1,0 +1,7 @@
+switch.main_bathroom_toilet_switch_3:
+  icon: mdi:power-plug
+  friendly_name: Main Bathroom Toilet Switch
+
+switch.master_bathroom_toilet_switch_3:
+  icon: mdi:power-plug
+  friendly_name: Master Bathroom Toilet Switch

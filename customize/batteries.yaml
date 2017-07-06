@@ -1,0 +1,24 @@
+sensor.batt_front_door_lock:
+  friendly_name: 'Front Door Lock'
+  icon: mdi:battery
+sensor.batt_siren:
+  friendly_name: 'Siren'
+  icon: mdi:battery
+sensor.batt_motion_sensor:
+  friendly_name: 'Motion Sensor'
+  icon: mdi:battery
+sensor.batt_front_door_sensor:
+  friendly_name: 'Front Door Sensor'
+  icon: mdi:battery
+sensor.batt_guest_window_sensor:
+  friendly_name: 'Guest Window Sensor'
+  icon: mdi:battery
+sensor.batt_master_window_sensor:
+  friendly_name: 'Master Window Sensor'
+  icon: mdi:battery
+sensor.batt_patio_door_sensor:
+  friendly_name: 'Patio Door Sensor'
+  icon: mdi:battery
+sensor.batt_fire_alarm_sensor:
+  friendly_name: 'Fire Alarm Sensor'
+  icon: mdi:battery

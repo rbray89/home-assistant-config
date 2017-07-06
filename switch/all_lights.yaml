@@ -1,0 +1,10 @@
+- platform: template
+  switches:
+    all_lights:
+      value_template: "{{ is_state('group.all_lights', 'on') }}"
+      turn_on:
+        service: homeassistant.turn_on
+        entity_id: group.all_lights
+      turn_off:
+        service: homeassistant.turn_off
+        entity_id: group.all_lights

@@ -1,0 +1,155 @@
+      name: Demo Floorplan
+      image: /local/custom_ui/floorplan/floorplan.svg
+      stylesheet: /local/custom_ui/floorplan/floorplan.css
+      
+      # These options are optional
+      warnings:            # enable warnings (to find out why things might ot be working correctly)
+      # pan_zoom:            # enable experimental panning / zooming
+      # hide_app_toolbar:    # hide the application toolbar (when used as a custom panel)
+
+      #last_motion_entity: sensor.template_last_motion
+      #last_motion_class: last-motion
+
+      groups:
+
+        - name: Lights
+          entities:
+            - light.living_room_light_level
+            - light.living_room_floor_lamp_level
+            - light.living_room_table_lamp_level
+            - light.kitchen_light_level
+            - light.dining_light_level
+            - light.hallway_light_level
+            - light.patio_light_level
+            - light.guest_bedroom_light_level
+            - light.guest_bedroom_lamp_level
+            - light.main_bathroom_vanity_level
+            - light.main_bathroom_tub_level
+            - light.master_bedroom_light_level
+            - light.master_bedroom_left_lamp_level
+            - light.master_bedroom_right_lamp_level
+            - light.master_bathroom_vanity_level
+            - light.master_bathroom_shower_level
+            - light.master_bedroom_closet_level
+          states:
+            - state: 'on'
+              class: 'light-on'
+            - state: 'off'
+              class: 'light-off'
+
+        - name: Switches
+          entities:
+            - switch.patio_string_lights_switch
+          states:
+            - state: 'on'
+              class: 'light-on'
+            - state: 'off'
+              class: 'light-off'
+
+        - name: Binary sensors
+          entities:
+            - binary_sensor.trig_master_window_sensor
+            - binary_sensor.trig_guest_window_sensor
+            - binary_sensor.trig_front_door_sensor
+            - binary_sensor.trig_patio_door_sensor
+          states:
+            - state: 'off'
+              class: 'hidden-background'
+            - state: 'on'
+              class: 'alarm-background'
+
+        - name: Cameras
+          entities:
+            - camera.living_room
+          states:
+            - state: 'idle'
+              class: 'camera-idle'
+        
+        - name: Siren Alarm
+          entities:
+            - switch.siren_switch
+          states:
+            - state: 'off'
+              class: 'default-background'
+            - state: 'on'
+              class: 'alarm-background'
+              
+        - name: All Lights
+          entities:
+            - switch.all_lights
+          states:
+            - state: 'on'
+              class: 'light-on'
+            - state: 'off'
+              class: 'light-off'
+              
+        - name: Lock
+          entities:
+            - lock.front_door_lock_locked
+          states:
+            - state: 'locked'
+              class: 'locked'
+            - state: 'unlocked'
+              class: 'unlocked'
+              
+        - name: Security Notifications
+          entities:
+            - input_boolean.security_notifications
+          states:
+            - state: 'off'
+              class: 'default-background'
+            - state: 'on'
+              class: 'enabled-background'
+              
+        - name: Security Sensor
+          entities:
+            - binary_sensor.trig_security_sensor
+          states:
+            - state: 'off'
+              class: 'default-background'
+            - state: 'on'
+              class: 'alarm-background'
+              
+        - name: Fire Alarm Sensor
+          entities:
+            - binary_sensor.trig_fire_alarm
+          states:
+            - state: 'off'
+              class: 'default-background'
+            - state: 'on'
+              class: 'alarm-background'
+              
+        - name: Lights Alarm
+          entities:
+            - automation.lights_alarm
+          states:
+            - state: 'off'
+              class: 'default-background'
+            - state: 'on'
+              class: 'enabled-background'
+              
+        - name: Siren Alarm
+          entities:
+            - automation.siren_alarm
+          states:
+            - state: 'off'
+              class: 'default-background'
+            - state: 'on'
+              class: 'enabled-background'
+              
+#        - name: thermostat_temp
+#          entities:
+#            - climate.downstairs
+#            - climate.upstairs
+#          text_template: '${entity.attributes.current_temperature ? entity.attributes.current_temperature : "undefined"}'
+#
+# The above text_template uses extended attributes from the climate.* objects to get current temperature.
+
+#        - name: text_states
+#          entities:
+#            - sensor.downstairs_thermostat_humidity
+#            - sensor.dark_sky_temperature
+#            - sensor.last_message
+#          text_template: '${entity.state ? entity.state.replace(/\s{2,}/g,"") : "undefined"}'
+#
+# The above text_template uses jQuery syntax to search and replace any instance of 2 consecutive (or more) spaces in a string of text.
