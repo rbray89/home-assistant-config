@@ -1,0 +1,124 @@
+      
+- alias: 'Shabbat Deactivate'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.shabbat_time
+  action:
+    - service_template: >
+        switch.turn_{{ trigger.from_state.state }}
+      data:
+        entity_id: switch.main_bathroom_toilet_switch_3
+    - service_template: >
+        automation.turn_{{ trigger.from_state.state }}
+      data:
+        entity_id: automation.door_open_light
+
+- alias: 'Shabbat Lights On Start'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.shabbat_time
+    to: 'on'
+  action:
+    service: light.turn_on
+    entity_id:
+      - light.living_room_floor_lamp_level 
+      - light.kitchen_light_level
+      - light.hallway_light_level
+      - light.main_bathroom_vanity_level
+      - light.master_bedroom_closet_level
+    data:
+      brightness: 150
+
+- alias: 'Shabbat Lights Late'
+  trigger:
+    platform: time
+    at: '22:30:00'
+  condition:
+    condition: state
+    entity_id: binary_sensor.shabbat_time
+    state: 'on'
+  action:
+    - service: light.turn_on
+      entity_id:
+        - light.living_room_floor_lamp_level
+        - light.kitchen_light_level
+        - light.hallway_light_level
+        - light.main_bathroom_vanity_level
+        - light.master_bedroom_closet_level
+      data:
+        brightness: 25
+    - service: light.turn_off
+      entity_id:
+        - light.living_room_light_level
+        - light.kitchen_light_level
+
+- alias: 'Shabbat Lights Bedtime'
+  trigger:
+    platform: time
+    at: '00:00:00'
+  condition:
+    condition: state
+    entity_id: binary_sensor.shabbat_time
+    state: 'on'
+  action:
+    - service: light.turn_off
+      entity_id:
+        - light.living_room_light_level
+        - light.living_room_floor_lamp_level
+        - light.living_room_table_lamp_level
+        - light.kitchen_light_level
+        - light.main_bathroom_vanity_level
+        - light.dining_light_level
+        - light.guest_bedroom_light_level
+        - light.guest_bedroom_lamp_level 
+        - light.master_bedroom_light_level
+        - light.master_bedroom_left_lamp_level
+        - light.master_bedroom_right_lamp_level
+        - light.master_bathroom_vanity_level
+        - light.master_bathroom_shower_level
+    - service: light.turn_on
+      entity_id:
+        - light.main_bathroom_tub_level
+        - light.hallway_light_level
+      data:
+        brightness: 25
+
+- alias: 'Shabbat Lights Morning'
+  trigger:
+    platform: time
+    at: '08:30:00'
+  condition:
+    condition: state
+    entity_id: binary_sensor.shabbat_time
+    state: 'on'
+  action:
+    - service: light.turn_on
+      entity_id:
+        - light.living_room_light_level
+        - light.main_bathroom_vanity_level
+        - light.guest_bedroom_light_level
+        - light.guest_bedroom_lamp_level
+        - light.master_bedroom_light_level
+        - light.master_bedroom_left_lamp_level
+        - light.master_bedroom_right_lamp_level
+      data:
+        brightness: 50
+    - service: light.turn_on
+      entity_id:
+        - light.main_bathroom_vanity_level
+        - light.main_bathroom_tub_level
+        - light.hallway_light_level
+        - light.master_bathroom_vanity_level
+        - light.master_bathroom_shower_level
+        - light.master_bedroom_closet_level
+      data:
+        brightness: 125
+    - service: light.turn_on
+      entity_id:
+        - light.kitchen_light_level
+        - light.dining_light_level
+        - light.living_room_floor_lamp_level
+      data:
+        brightness: 255
+
+

@@ -1,33 +1,33 @@
 group.default_view:
   order: 1
-  emulated_hue: false
+  emulated_hue_hidden: true
   
 group.lights_view:
   order: 4
-  emulated_hue: false
+  emulated_hue_hidden: true
 
 group.appliances_view:
   order: 5
-  emulated_hue: false
+  emulated_hue_hidden: true
   
 group.security_view:
   order: 6
-  emulated_hue: false
+  emulated_hue_hidden: true
 
 group.automation_view:
   order: 7
-  emulated_hue: false
+  emulated_hue_hidden: true
   
 group.status_view:
   order: 8
-  emulated_hue: false
+  emulated_hue_hidden: true
 
   
 group.weather:
-  emulated_hue: false
+  emulated_hue_hidden: true
   
 group.thermostat:
-  emulated_hue: false
+  emulated_hue_hidden: true
 
 
 
@@ -54,48 +54,48 @@ group.patio:
 
   
 group.security_status:
-  emulated_hue: false
+  emulated_hue_hidden: true
   
 group.security_group:
-  emulated_hue: false
+  emulated_hue_hidden: true
   
 group.security_config:
-  emulated_hue: false
+  emulated_hue_hidden: true
   
 
 group.diskstation:
-  emulated_hue: false
+  emulated_hue_hidden: true
   
 group.batteries:
-  emulated_hue: false
+  emulated_hue_hidden: true
   
 group.system:
-  emulated_hue: false
+  emulated_hue_hidden: true
 
 
 group.automations:
-  emulated_hue: false
+  emulated_hue_hidden: true
   
 group.all_automations:
-  emulated_hue: false
+  emulated_hue_hidden: true
   
 group.all_locks:
-  emulated_hue: false
+  emulated_hue_hidden: true
   
 group.all_switches:
-  emulated_hue: false
+  emulated_hue_hidden: true
   
 group.all_scripts:
-  emulated_hue: false
+  emulated_hue_hidden: true
   
 group.all_devices:
-  emulated_hue: false
+  emulated_hue_hidden: true
 
 group.all_lights:
   emulated_hue_name: "All Lights"
   
 group.all_lights_2:
-  emulated_hue: false
+  emulated_hue_hidden: true
   
 
 group.switchable_appliances:

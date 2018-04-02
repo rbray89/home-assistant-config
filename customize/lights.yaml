@@ -1,6 +1,6 @@
 switch.all_lights:
   friendly_name: All Lights
-  emulated_hue: false
+  emulated_hue_hidden: true
   
 light.living_room_table_lamp_level:
   friendly_name: Living Room Table Lamp
@@ -36,6 +36,8 @@ light.kitchen_light_level:
 light.living_room_floor_lamp_level:
   friendly_name: Living Room Floor Lamp
   icon: mdi:lamp
+light.living_room_cabinet_light_level:
+  friendly_name: Living Room Cabinet
 light.living_room_light_level:
   friendly_name: Living Room
 

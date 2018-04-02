@@ -1,16 +1,17 @@
 default_view:
+  name: Home
   view: yes
   entities:
-    - group.floorplan
+    #- group.floorplan
     #- group.weather
     - group.thermostat
     - media_player.roku_1gm35h085065
     - persistent_notification.1
 
-floorplan:
-  name: Floorplan
-  entities:
-    - binary_sensor.floorplan
+#floorplan:
+#  name: Floorplan
+#  entities:
+#    - binary_sensor.floorplan
   
     
 weather:

@@ -1,0 +1,58 @@
+#### - HS DIMMER Automation - ################
+- alias: 'HSDimmer TRPLTap'
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      scene_data: 4
+  action:
+    service: light.turn_on
+    data_template:
+      entity_id: '{{"light." + trigger.event.data.entity_id.split(".")[1] + "_level" }}'
+      brightness: '{{ 255 if trigger.event.data.scene_id | int == 1 else 10}}'
+
+
+- alias: 'HSDimmer DBLTap for LR Table Lamp'
+  trigger:
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        scene_data: 3
+        entity_id: zwave.dining_light 
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        scene_data: 3
+        entity_id: zwave.living_room_light
+  action:
+    service: light.turn_on
+    data_template:
+      entity_id: light.living_room_table_lamp_level
+      brightness: '{{ 255 if trigger.event.data.scene_id | int == 1 else 0}}'
+
+- alias: 'HSDimmer DBLTap for LR Floor Lamp'
+  trigger:
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        scene_data: 3
+        entity_id: zwave.living_room_cabinet_light
+  action:
+    service: light.turn_on
+    data_template:
+      entity_id: light.living_room_floor_lamp_level
+      brightness: '{{ 255 if trigger.event.data.scene_id | int == 1 else 0}}'
+
+- alias: 'HSDimmer DBLTap for Patio String Lights'
+  trigger:
+    - platform: event
+      event_type: zwave.scene_activated
+      event_data:
+        scene_data: 3
+        entity_id: zwave.patio_light
+  action:
+    service_template: >
+      switch.turn_{{ "on" if trigger.event.data.scene_id | int == 1 else "off"}}
+    data:
+      entity_id: switch.patio_string_lights_switch
+

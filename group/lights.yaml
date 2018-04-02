@@ -16,6 +16,7 @@ living_room:
     - light.living_room_light_level
     - light.living_room_floor_lamp_level
     - light.living_room_table_lamp_level
+    - light.living_room_cabinet_light_level
 
 k_and_d:
   name: Kitchen And Dining
@@ -62,6 +63,7 @@ master_bath:
 all_lights:
   name: All Lights
   entities:
+    - light.living_room_cabinet_light_level
     - light.living_room_light_level
     - light.living_room_floor_lamp_level
     - light.living_room_table_lamp_level

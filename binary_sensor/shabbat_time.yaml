@@ -1,0 +1,3 @@
+  - platform: shabbat_time
+    zipcode: !secret zipcode
+

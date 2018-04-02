@@ -2,10 +2,10 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Home
   # Location required to calculate the time the sun rises and sets
-  latitude: 40.037843
-  longitude: -105.256890
+  latitude: !secret lat
+  longitude: !secret long
   # Impacts weather/sunrise data
-  elevation: 1581
+  elevation: !secret elevation
 
   unit_system: imperial
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -54,8 +54,6 @@ http:
   base_url : !secret http_url
   ip_ban_enabled: True
   login_attempts_threshold: 5
-  #ssl_certificate: !secret http_ssl_certificate
-  #ssl_key: !secret http_ssl_key
 
 
 # Checks for available updates
@@ -111,12 +109,23 @@ logbook:
 sun:
 
 device_tracker:
-  - platform: asuswrt
-    host: 192.168.1.1
-    username: admin
-    password: !secret http_api_password
+  - platform: zxyelc3000z
+    admin_password: !secret router_pass
+    new_device_defaults:
+      track_new_devices: False
+      hide_if_away: False
   - platform: owntracks
     max_gps_accuracy: 200
+    new_device_defaults:
+      track_new_devices: False
+      hide_if_away: False
+  - platform: bluetooth_tracker
+    new_device_defaults:
+      track_new_devices: False
+      hide_if_away: False
+
+apcupsd:
+  host: a722577e-apcupsd
 
 notify:
   name: notify_html5
@@ -148,18 +157,18 @@ emulated_hue:
 camera:
   - platform: mjpeg
     name: Living Room
-    mjpeg_url: http://picam.local:8500/picam.mjpg
+    mjpeg_url: !secret lr_camera_url
 
 #Zwave
 zwave:
-  usb_path: /dev/zwave
+  usb_path: /dev/ttyUSB0
   device_config: !include zwave_device_config.yaml
   network_key: !secret zwave_network_key  
   new_entity_ids: true
 
 zha:
-  usb_path: /dev/zigbee
-  database_path: /home/homeassistant/.homeassistant/zigbee.db
+  usb_path: /dev/ttyUSB1
+  database_path: /config/zigbee.db
 
 #Todo:
 # Freeze Warning Alert

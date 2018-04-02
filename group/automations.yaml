@@ -3,15 +3,33 @@ automation_view:
   view: true
   entities:
     - group.automations
+    - group.notification_automations
+    - group.shabbat_automations
 
 automations:
   name: Automations
   control: hidden
   entities:
     - automation.door_open_light
-    - automation.update_available_notifications
     - automation.wakeup_light_trigger
+
+notification_automations:
+  name: Notification Automations
+  control: hidden
+  entities:
+    - automation.update_available_notifications   
     - automation.enable_notifications_when_away
     - automation.disable_notifications_when_home
     - automation.nas_disk_status_notifications_a
     - automation.nas_disk_status_notifications_b
+
+shabbat_automations:
+  name: Shabbat Automations
+  control: hidden
+  entities:
+    - automation.shabbat_lights_on_start
+    - automation.shabbat_deactivate
+    - automation.shabbat_lights_late
+    - automation.shabbat_lights_bedtime
+    - automation.shabbat_lights_morning
+

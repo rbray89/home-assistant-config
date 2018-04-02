@@ -12,7 +12,8 @@
   trigger:
     platform: state
     entity_id: device_tracker.owntracks_ryan_cell
-    from: 'home'
+    to: 'not_home'
+    for: 00:30
   action:
     - service: input_boolean.turn_on
       data:

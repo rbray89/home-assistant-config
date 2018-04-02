@@ -2,13 +2,13 @@
 switch.siren_switch:
   friendly_name: Siren Alarm
   icon: mdi:alarm-bell
-  emulated_hue: false
+  emulated_hue_hidden: true
   
 input_boolean.security_armed:
-  emulated_hue: false
+  emulated_hue_hidden: true
 
 input_boolean.security_notifications:
-  emulated_hue: false
+  emulated_hue_hidden: true
   
 binary_sensor.trig_motion_sensor:
   friendly_name: 'Motion Sensor'
