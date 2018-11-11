@@ -8,4 +8,11 @@
 *.conf
 secrets.yaml
 *.pyc
+secrets.yaml	
+OZW_Log.txt	
+zigbee.db	
+pyozw.sqlite	
+html5_push_registrations.conf	
+home-assistant.log	
+known_devices.yaml
 custom_components/binary_sensor/*
