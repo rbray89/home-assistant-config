@@ -6,5 +6,6 @@
 *.log
 *.sqlite
 *.conf
+secrets.yaml
 *.pyc
 custom_components/binary_sensor/*
