@@ -1,5 +1,5 @@
 """
-Support for the zxyel C3000z centurylink modem/router.
+Support for the zyxel C3000z centurylink modem/router.
 For more details about this platform, please refer to the documentation at
 https://home-assistant.io/components/device_tracker.arpscan_tracker/
 """
@@ -88,8 +88,8 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
 
 
 def get_scanner(hass, config):
-    """Validate the configuration and return a zxyelC300ZDeviceScanner scanner."""
-    scanner = zxyelC300ZDeviceScanner(config[DOMAIN])
+    """Validate the configuration and return a zyxelC300ZDeviceScanner scanner."""
+    scanner = zyxelC300ZDeviceScanner(config[DOMAIN])
 
     return scanner if scanner.success_init else None
 
@@ -97,7 +97,7 @@ def get_scanner(hass, config):
 Device = namedtuple('Device', ['mac', 'name', 'ip', 'last_update'])
 
 
-class zxyelC300ZDeviceScanner(DeviceScanner):
+class zyxelC300ZDeviceScanner(DeviceScanner):
     """This class scans for devices using the router UI."""
 
     exclude = []
@@ -145,7 +145,7 @@ class zxyelC300ZDeviceScanner(DeviceScanner):
         admin_pass = self._admin_pass
         baseurl = self._url
         now = dt_util.now()
-       
+
         s = Session()
 
         params = urllib.parse.urlencode({'admin_username': admin, 'admin_password': admin_pass})

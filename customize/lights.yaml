@@ -33,11 +33,14 @@ light.dining_light_level:
   friendly_name: Dining
 light.kitchen_light_level:
   friendly_name: Kitchen
+light.utility_closet_light_level:
+  friendly_name: Utility Closet
 light.living_room_floor_lamp_level:
   friendly_name: Living Room Floor Lamp
   icon: mdi:lamp
-light.living_room_cabinet_light_level:
+switch.living_room_cabinet_light_switch:
   friendly_name: Living Room Cabinet
+  icon: mdi:lightbulb
 light.living_room_light_level:
   friendly_name: Living Room
 

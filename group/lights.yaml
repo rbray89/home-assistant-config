@@ -16,7 +16,7 @@ living_room:
     - light.living_room_light_level
     - light.living_room_floor_lamp_level
     - light.living_room_table_lamp_level
-    - light.living_room_cabinet_light_level
+    - switch.living_room_cabinet_light_switch
 
 k_and_d:
   name: Kitchen And Dining
@@ -24,6 +24,7 @@ k_and_d:
     - light.kitchen_light_level
     - light.dining_light_level
     - light.hallway_light_level
+    - light.utility_closet_light_level
     
 patio:
   name: Patio
@@ -63,12 +64,13 @@ master_bath:
 all_lights:
   name: All Lights
   entities:
-    - light.living_room_cabinet_light_level
+    - switch.living_room_cabinet_light_switch
     - light.living_room_light_level
     - light.living_room_floor_lamp_level
     - light.living_room_table_lamp_level
     - light.kitchen_light_level
     - light.dining_light_level
+    - light.utility_closet_light_level
     - light.hallway_light_level
     - switch.patio_string_lights_switch
     - light.patio_light_level

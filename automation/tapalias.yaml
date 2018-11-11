@@ -1,4 +1,10 @@
 #### - HS DIMMER Automation - ################
+#Action V1  V2
+#single  0  7680
+#hold    2  7740
+#release 1  7400
+#double  3  7860
+#triple  4  7920
 - alias: 'HSDimmer TRPLTap'
   trigger:
     platform: event
@@ -30,12 +36,12 @@
       entity_id: light.living_room_table_lamp_level
       brightness: '{{ 255 if trigger.event.data.scene_id | int == 1 else 0}}'
 
-- alias: 'HSDimmer DBLTap for LR Floor Lamp'
+- alias: 'HSSwitch DBLTap for LR Floor Lamp'
   trigger:
     - platform: event
       event_type: zwave.scene_activated
       event_data:
-        scene_data: 3
+        scene_data: 7860 
         entity_id: zwave.living_room_cabinet_light
   action:
     service: light.turn_on
