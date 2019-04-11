@@ -25,7 +25,7 @@ k_and_d:
     - light.dining_light_level
     - light.hallway_light_level
     - light.utility_closet_light_level
-    
+
 patio:
   name: Patio
   entities:
@@ -36,14 +36,13 @@ guest_bedroom:
   name: Guest Bedroom
   entities:
     - light.guest_bedroom_light_level
-    - light.guest_bedroom_lamp_level
 
 main_bath:
   name: Main Bathroom
   entities:
     - light.main_bathroom_vanity_level
     - light.main_bathroom_tub_level
-    
+
 
 
 master_bedroom:
@@ -60,7 +59,7 @@ master_bath:
     - light.master_bathroom_shower_level
     - light.master_bedroom_closet_level
 
-    
+
 all_lights:
   name: All Lights
   entities:
@@ -75,7 +74,6 @@ all_lights:
     - switch.patio_string_lights_switch
     - light.patio_light_level
     - light.guest_bedroom_light_level
-    - light.guest_bedroom_lamp_level
     - light.main_bathroom_vanity_level
     - light.main_bathroom_tub_level
     - light.master_bedroom_light_level

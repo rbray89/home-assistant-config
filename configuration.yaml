@@ -19,6 +19,8 @@ input_boolean: !include_dir_merge_named input_boolean
 
 automation: !include_dir_merge_list automation
 script: !include_dir_merge_named script
+shell_command:
+  cleanup_camera_snapshots: find /config/www/camera_snapshots -type f -name '*.jpg' -mtime +1 -exec rm {} \;
 
 binary_sensor: !include_dir_merge_list binary_sensor
 
@@ -26,8 +28,14 @@ switch: !include_dir_merge_list switch
 
 sensor: !include_dir_merge_list sensor
 
+system_health:
+
 recorder:
   db_url: !secret mysql_url
+
+input_text:
+  timestamp:
+    name: Filename Timestamp
 
 # shows tracked devices on map
 map:
@@ -97,6 +105,7 @@ logbook:
       - lock
       - climate
       - presence
+      - automation
     entities:
       - sensor.honeywell_th8320zw1000_touchscreen_thermostat_temperature_5_1
       - sensor.linear_wapirz1_temperature_24_1
@@ -118,15 +127,10 @@ device_tracker:
     new_device_defaults:
       track_new_devices: False
       hide_if_away: False
-  - platform: owntracks
-    max_gps_accuracy: 200
-    new_device_defaults:
-      track_new_devices: False
-      hide_if_away: False
-  - platform: bluetooth_tracker
-    new_device_defaults:
-      track_new_devices: False
-      hide_if_away: False
+#  - platform: bluetooth_tracker
+#    new_device_defaults:
+#      track_new_devices: False
+#      hide_if_away: False
 
 apcupsd:
   host: a722577e-apcupsd
@@ -134,8 +138,9 @@ apcupsd:
 notify:
   name: notify_html5
   platform: html5
-  gcm_api_key: !secret notify_gcm_api_key
-  gcm_sender_id: !secret notify_gcm_sender_id
+  vapid_pub_key: !secret vapid_pub_key
+  vapid_prv_key: !secret vapid_prv_key
+  vapid_email: !secret vapid_email
 
 emulated_hue:
   listen_port: 8300

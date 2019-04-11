@@ -1004,12 +1004,6 @@
        height="34.829556"
        x="548.32739"
        y="731.94745" />
-    <path
-       id="light.guest_bedroom_lamp_level"
-       d="m 551.71414,712.09518 20.42955,0 10.21477,30.64433 -40.85909,0 10.21477,-30.64433 m 7.66108,33.19802 5.10738,0 0,12.76846 12.76847,0 0,5.1074 -30.64431,0 0,-5.1074 12.76846,0 0,-12.76846 z"
-       inkscape:connector-curvature="0"
-       style="fill:#44739e;fill-opacity:1"
-       inkscape:label="#path4228" />
     <rect
        style="fill:#e0f0f8;fill-opacity:1;stroke:#c6c6c6;stroke-width:0.99999994;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect8731-6-9-9-6-4"

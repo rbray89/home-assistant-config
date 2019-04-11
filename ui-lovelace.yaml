@@ -21,7 +21,7 @@ views:
         show_header_toggle: false
         entities:
           - automation.door_open_light
-          - automation.wakeup_light_trigger
+          - automation.wake_up_light_trigger
       - type: entities
         title: Notification Automations
         show_header_toggle: false
@@ -100,7 +100,7 @@ views:
         show_header_toggle: true
         entities:
           - sensor.disk_free_
-          - sensor.since_last_boot
+          - sensor.last_boot
       - type: entities
         title: Battery Levels
         show_header_toggle: true
@@ -153,7 +153,6 @@ views:
         show_header_toggle: true
         entities:
           - light.guest_bedroom_light_level
-          - light.guest_bedroom_lamp_level
       - type: entities
         title: Master Bedroom
         show_header_toggle: true

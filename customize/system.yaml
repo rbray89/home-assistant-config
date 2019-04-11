@@ -1,10 +1,10 @@
-sensor.since_last_boot:
+sensor.last_boot:
   friendly_name: 'Uptime'
-sensor.disk_use_:
+sensor.disk_use_percent:
   friendly_name: 'Disk Use'
-sensor.disk_free_:
+sensor.disk_free:
   friendly_name: 'Disk Free'
-sensor.ram_use:
+sensor.memory_use_percent:
   icon: mdi:chip
-sensor.ram_free:
+sensor.memory_free:
   icon: mdi:chip

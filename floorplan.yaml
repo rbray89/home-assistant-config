@@ -1,7 +1,7 @@
       name: Demo Floorplan
       image: /local/custom_ui/floorplan/floorplan.svg
       stylesheet: /local/custom_ui/floorplan/floorplan.css
-      
+
       # These options are optional
       warnings:            # enable warnings (to find out why things might ot be working correctly)
       # pan_zoom:            # enable experimental panning / zooming
@@ -22,7 +22,6 @@
             - light.hallway_light_level
             - light.patio_light_level
             - light.guest_bedroom_light_level
-            - light.guest_bedroom_lamp_level
             - light.main_bathroom_vanity_level
             - light.main_bathroom_tub_level
             - light.master_bedroom_light_level
@@ -64,7 +63,7 @@
           states:
             - state: 'idle'
               class: 'camera-idle'
-        
+
         - name: Siren Alarm
           entities:
             - switch.siren_switch
@@ -73,7 +72,7 @@
               class: 'default-background'
             - state: 'on'
               class: 'alarm-background'
-              
+
         - name: All Lights
           entities:
             - switch.all_lights
@@ -82,7 +81,7 @@
               class: 'light-on'
             - state: 'off'
               class: 'light-off'
-              
+
         - name: Lock
           entities:
             - lock.front_door_lock_locked
@@ -91,7 +90,7 @@
               class: 'locked'
             - state: 'unlocked'
               class: 'unlocked'
-              
+
         - name: Security Notifications
           entities:
             - input_boolean.security_notifications
@@ -100,7 +99,7 @@
               class: 'default-background'
             - state: 'on'
               class: 'enabled-background'
-              
+
         - name: Security Sensor
           entities:
             - binary_sensor.trig_security_sensor
@@ -109,7 +108,7 @@
               class: 'default-background'
             - state: 'on'
               class: 'alarm-background'
-              
+
         - name: Fire Alarm Sensor
           entities:
             - binary_sensor.trig_fire_alarm
@@ -118,7 +117,7 @@
               class: 'default-background'
             - state: 'on'
               class: 'alarm-background'
-              
+
         - name: Lights Alarm
           entities:
             - automation.lights_alarm
@@ -127,7 +126,7 @@
               class: 'default-background'
             - state: 'on'
               class: 'enabled-background'
-              
+
         - name: Siren Alarm
           entities:
             - automation.siren_alarm
@@ -136,7 +135,7 @@
               class: 'default-background'
             - state: 'on'
               class: 'enabled-background'
-              
+
 #        - name: thermostat_temp
 #          entities:
 #            - climate.downstairs

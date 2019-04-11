@@ -1,12 +1,9 @@
 switch.all_lights:
   friendly_name: All Lights
   emulated_hue_hidden: true
-  
+
 light.living_room_table_lamp_level:
   friendly_name: Living Room Table Lamp
-  icon: mdi:lamp
-light.guest_bedroom_lamp_level:
-  friendly_name: Guest Bed Lamp
   icon: mdi:lamp
 light.master_bedroom_left_lamp_level:
   friendly_name: Master Bed Left Lamp
@@ -21,7 +18,7 @@ light.master_bedroom_light_level:
   friendly_name: Master Bedroom
 light.guest_bedroom_light_level:
   friendly_name: Guest Bedroom
-  
+
 light.main_bathroom_vanity_level:
   friendly_name: Main Bath Vanity
 light.main_bathroom_tub_level:
@@ -50,7 +47,7 @@ light.master_bathroom_shower_level:
   friendly_name: Master Bath Shower
 light.master_bedroom_closet_level:
   friendly_name: Master Closet
-  
+
 switch.patio_string_lights_switch:
   icon: mdi:ceiling-light
   friendly_name: Patio String Lights

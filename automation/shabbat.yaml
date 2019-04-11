@@ -1,4 +1,4 @@
-      
+
 - alias: 'Shabbat Deactivate'
   trigger:
     platform: state
@@ -21,7 +21,7 @@
   action:
     service: light.turn_on
     entity_id:
-      - light.living_room_floor_lamp_level 
+      - light.living_room_floor_lamp_level
       - light.kitchen_light_level
       - light.hallway_light_level
       - light.main_bathroom_vanity_level
@@ -70,7 +70,6 @@
         - light.main_bathroom_vanity_level
         - light.dining_light_level
         - light.guest_bedroom_light_level
-        - light.guest_bedroom_lamp_level 
         - light.master_bedroom_light_level
         - light.master_bedroom_left_lamp_level
         - light.master_bedroom_right_lamp_level
@@ -97,7 +96,6 @@
         - light.living_room_light_level
         - light.main_bathroom_vanity_level
         - light.guest_bedroom_light_level
-        - light.guest_bedroom_lamp_level
         - light.master_bedroom_light_level
         - light.master_bedroom_left_lamp_level
         - light.master_bedroom_right_lamp_level
@@ -120,5 +118,3 @@
         - light.living_room_floor_lamp_level
       data:
         brightness: 255
-
-

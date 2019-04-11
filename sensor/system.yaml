@@ -7,4 +7,4 @@
     - type: memory_use_percent
     - type: memory_free
     - type: processor_use
-    - type: since_last_boot
+    - type: last_boot
